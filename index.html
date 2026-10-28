@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0c0d11">
+<title>Blocklist</title>
+<meta name="description" content="Lista de contas do Instagram para bloquear, com cópia rápida do @ e instruções passo a passo.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='11' fill='none' stroke='%23ff4d6a' stroke-width='4'/><line x1='8' y1='24' x2='24' y2='8' stroke='%23ff4d6a' stroke-width='4'/></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <h1 class="brand">
+      <span class="brand__mark" aria-hidden="true"></span>
+      Blocklist
+    </h1>
+    <button type="button" class="btn btn--ghost" id="btnHelp">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.2 2.4c-.6.2-.7.6-.7 1.1v.5"/><circle cx="12" cy="17" r=".6" fill="currentColor" stroke="none"/></svg>
+      Como bloquear
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="progress" aria-label="Progresso">
+    <div class="progress__row">
+      <strong id="progressText">0 de 0 bloqueadas</strong>
+      <button type="button" class="linkbtn" id="btnReset">Zerar marcações</button>
+    </div>
+    <div class="progress__track"><div class="progress__bar" id="progressBar"></div></div>
+  </section>
+
+  <div class="controls">
+    <div class="search">
+      <svg class="ico search__ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="search" placeholder="Buscar @usuário ou motivo" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Buscar na lista">
+    </div>
+    <div class="chips" role="tablist" aria-label="Filtrar lista">
+      <button type="button" class="chip is-active" role="tab" aria-selected="true" data-filter="todas">Todas</button>
+      <button type="button" class="chip" role="tab" aria-selected="false" data-filter="pendentes">Pendentes</button>
+      <button type="button" class="chip" role="tab" aria-selected="false" data-filter="bloqueadas">Bloqueadas</button>
+    </div>
+  </div>
+
+  <ul class="list" id="list"></ul>
+
+  <p class="empty" id="empty" hidden>Nenhuma conta encontrada.</p>
+
+  <p class="foot">Marcações ficam salvas só neste aparelho, no navegador.</p>
+</main>
+
+<dialog class="sheet" id="helpPanel" aria-labelledby="helpTitle">
+  <div class="sheet__panel">
+    <div class="sheet__grab" aria-hidden="true"></div>
+    <h2 class="sheet__title" id="helpTitle">Como bloquear no Instagram</h2>
+    <ol class="steps">
+      <li>Toque em <strong>Copiar</strong> na conta da lista. O @ vai para a área de transferência.</li>
+      <li>Toque em <strong>Abrir</strong> — o perfil abre direto no app. Se preferir, cole o @ na busca do Instagram.</li>
+      <li>No perfil, toque nos <strong>três pontinhos</strong> (⋯) no canto superior direito.</li>
+      <li>Escolha <strong>Bloquear</strong>.</li>
+      <li>Confirme em <strong>Bloquear</strong>. O Instagram oferece bloquear também as contas novas que a pessoa criar — marque essa opção se aparecer.</li>
+      <li>Volte aqui e toque no <strong>✓</strong> para marcar a conta como feita.</li>
+    </ol>
+    <p class="sheet__note">Bloquear é silencioso: a pessoa não recebe nenhum aviso.</p>
+    <button type="button" class="btn btn--primary btn--block" id="btnCloseHelp">Entendi</button>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="accounts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  // Site estático servido como Worker -> ganha um domínio *.workers.dev.
+  // Deploy:  npx wrangler deploy
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "blocklist",
+  "compatibility_date": "2026-10-28",
+  "assets": {
+    "directory": "./public",
+    // página única: qualquer rota cai no index.html em vez de dar 404
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

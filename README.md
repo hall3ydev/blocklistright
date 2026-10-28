@@ -5,7 +5,7 @@ copiar o `@` com um toque, abrir o perfil direto no app e marcar o que já foi f
 
 ## Como manter a lista
 
-Edite **apenas** o arquivo `accounts.js`:
+Edite **apenas** o arquivo `public/accounts.js`:
 
 ```js
 window.ACCOUNTS = [
@@ -27,16 +27,28 @@ window.ACCOUNTS = [
 - Filtros Todas / Pendentes / Bloqueadas, busca e barra de progresso.
 - Tema claro e escuro conforme a preferência do sistema.
 
-## Rodar
+## Publicar na Cloudflare
 
-É HTML puro, sem build nem dependência. Abra o `index.html` no navegador, ou
-publique em **Settings → Pages → Deploy from a branch → main / (root)**.
+O site é servido como Worker de assets estáticos, o que dá um domínio
+`*.workers.dev`. Não há build nem dependência de runtime.
+
+```bash
+npx wrangler login     # uma vez, abre o navegador
+npx wrangler deploy
+```
+
+A configuração está em `wrangler.jsonc`. Para ver local antes de subir:
+
+```bash
+npx wrangler dev
+```
 
 ## Arquivos
 
 | Arquivo | Para quê |
 |---|---|
-| `index.html` | estrutura da página e o painel de instruções |
-| `styles.css` | estilos (mobile-first, tema claro/escuro) |
-| `app.js` | busca, filtros, cópia, marcação e progresso |
-| `accounts.js` | **a lista** — o único arquivo que muda no dia a dia |
+| `public/index.html` | estrutura da página e o painel de instruções |
+| `public/styles.css` | estilos (mobile-first, tema claro/escuro) |
+| `public/app.js` | busca, filtros, cópia, marcação e progresso |
+| `public/accounts.js` | **a lista** — o único arquivo que muda no dia a dia |
+| `wrangler.jsonc` | configuração de deploy na Cloudflare |

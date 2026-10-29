@@ -57,16 +57,73 @@
 <dialog class="sheet" id="helpPanel" aria-labelledby="helpTitle">
   <div class="sheet__panel">
     <div class="sheet__grab" aria-hidden="true"></div>
-    <h2 class="sheet__title" id="helpTitle">Como bloquear no Instagram</h2>
-    <ol class="steps">
-      <li>Toque em <strong>Copiar</strong> na conta da lista. O @ vai para a área de transferência.</li>
-      <li>Toque em <strong>Abrir</strong> — o perfil abre direto no app. Se preferir, cole o @ na busca do Instagram.</li>
-      <li>No perfil, toque nos <strong>três pontinhos</strong> (⋯) no canto superior direito.</li>
-      <li>Escolha <strong>Bloquear</strong>.</li>
-      <li>Confirme em <strong>Bloquear</strong>. O Instagram oferece bloquear também as contas novas que a pessoa criar — marque essa opção se aparecer.</li>
-      <li>Volte aqui e toque no <strong>✓</strong> para marcar a conta como feita.</li>
+    <h2 class="sheet__title" id="helpTitle">Como bloquear sem entrar nos perfis</h2>
+    <p class="sheet__lead">Dá para bloquear direto pelas configurações, sem precisar visitar a página nem o feed dessas contas.</p>
+
+    <ol class="guide">
+
+      <li class="guide__step">
+        <div class="guide__head">
+          <span class="guide__num" aria-hidden="true">1</span>
+          <p class="guide__text">No Instagram, vá em <strong>Configurações e atividade</strong> › <strong>Bloqueados</strong>.</p>
+        </div>
+        <div class="phone" aria-hidden="true">
+          <div class="phone__bar"><span>9:41</span><span class="phone__status"></span></div>
+          <div class="phone__nav">
+            <svg class="phone__back" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>
+            <span class="phone__navtitle">Configurações e atividade</span>
+          </div>
+          <ul class="phone__list">
+            <li><svg class="phone__ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Sua atividade<span class="phone__chev"></span></li>
+            <li><svg class="phone__ico" viewBox="0 0 24 24"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 3h16z"/><path d="M10 21h4"/></svg>Notificações<span class="phone__chev"></span></li>
+            <li><svg class="phone__ico" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Privacidade<span class="phone__chev"></span></li>
+            <li><svg class="phone__ico" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Segurança<span class="phone__chev"></span></li>
+            <li class="is-hl"><svg class="phone__ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="m6.5 17.5 11-11"/></svg>Bloqueados<span class="phone__chev"></span></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="guide__step">
+        <div class="guide__head">
+          <span class="guide__num" aria-hidden="true">2</span>
+          <p class="guide__text">Toque no ícone <strong>+</strong>, cole o <strong>@</strong> que você copiou aqui e selecione <strong>Bloquear</strong>.</p>
+        </div>
+        <div class="phone" aria-hidden="true">
+          <div class="phone__bar"><span>9:41</span><span class="phone__status"></span></div>
+          <div class="phone__nav">
+            <svg class="phone__back" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>
+            <span class="phone__navtitle">Bloqueados</span>
+            <svg class="phone__plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+          </div>
+          <div class="phone__body">
+            <div class="phone__field phone__field--search">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m19 19-3.2-3.2"/></svg>Pesquisar
+            </div>
+            <div class="phone__field phone__field--input">Digite o nome do perfil...</div>
+            <div class="phone__cta">Bloquear</div>
+          </div>
+        </div>
+      </li>
+
+      <li class="guide__step">
+        <div class="guide__head">
+          <span class="guide__num" aria-hidden="true">3</span>
+          <p class="guide__text">Pronto. Você bloqueia pelas configurações, sem dar visualização a nenhum desses perfis.</p>
+        </div>
+        <div class="guide__art" aria-hidden="true">
+          <svg viewBox="0 0 120 100">
+            <circle cx="50" cy="34" r="17"/>
+            <path d="M20 86a30 30 0 0 1 60 0z"/>
+            <g class="guide__art-rays"><path d="M14 30 4 24M16 48 5 50M20 15 13 7"/></g>
+            <circle class="guide__art-ban" cx="88" cy="70" r="20"/>
+            <path class="guide__art-ban" d="m74 84 28-28"/>
+          </svg>
+        </div>
+      </li>
+
     </ol>
-    <p class="sheet__note">Bloquear é silencioso: a pessoa não recebe nenhum aviso.</p>
+
+    <p class="sheet__note">Bloquear é silencioso: a pessoa não recebe aviso nenhum. Se preferir ir pelo perfil, use o botão <strong>Abrir</strong> do card e os três pontinhos (⋯) › Bloquear.</p>
     <button type="button" class="btn btn--primary btn--block" id="btnCloseHelp">Entendi</button>
   </div>
 </dialog>

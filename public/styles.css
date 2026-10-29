@@ -358,6 +358,9 @@ body {
   border-radius: 20px 20px 0 0;
   padding: 10px 18px calc(20px + var(--safe-b));
   color: var(--text);
+  max-height: 86dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .sheet__grab {
@@ -370,9 +373,198 @@ body {
 
 .sheet__title { margin: 0 0 14px; font-size: 18px; letter-spacing: -0.01em; }
 
-.steps { margin: 0 0 16px; padding-left: 20px; display: grid; gap: 10px; }
-.steps li { font-size: 14.5px; line-height: 1.45; padding-left: 2px; }
-.steps strong { font-weight: 600; }
+.sheet__lead {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.guide {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  gap: 24px;
+}
+
+.guide__step { display: grid; gap: 13px; }
+
+.guide__head { display: flex; align-items: flex-start; gap: 11px; }
+
+.guide__num {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.guide__text { margin: 0; font-size: 14.5px; line-height: 1.45; }
+.guide__text strong { font-weight: 600; }
+
+/* ---------- maquete de celular (cores fixas: representa um print do app) ---------- */
+
+.phone {
+  --ph-ink: #111318;
+  --ph-mut: #9aa0ab;
+  --ph-line: #e9ebef;
+  --ph-blue: #3b93f7;
+  width: 100%;
+  max-width: 268px;
+  margin: 0 auto;
+  background: #fff;
+  color: var(--ph-ink);
+  border: 3px solid #1a1c22;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .22);
+}
+
+.phone__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.phone__status {
+  width: 22px;
+  height: 9px;
+  border: 1.2px solid var(--ph-ink);
+  border-radius: 2.5px;
+  position: relative;
+  opacity: .7;
+}
+
+.phone__status::after {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  right: 7px;
+  background: var(--ph-ink);
+  border-radius: 1px;
+}
+
+.phone__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 11px 9px;
+  border-bottom: 1px solid var(--ph-line);
+}
+
+.phone__navtitle { flex: 1; font-size: 12px; font-weight: 700; }
+
+.phone__back, .phone__plus {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--ph-ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.phone__plus { width: 15px; height: 15px; stroke: var(--ph-blue); }
+
+.phone__list { list-style: none; margin: 0; padding: 4px 0 8px; }
+
+.phone__list li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 11px;
+  font-size: 11.5px;
+}
+
+.phone__list li.is-hl { background: #dde3ef; font-weight: 600; }
+
+.phone__ico {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--ph-ink);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.phone__chev {
+  margin-left: auto;
+  width: 5px;
+  height: 5px;
+  border-right: 1.4px solid var(--ph-mut);
+  border-top: 1.4px solid var(--ph-mut);
+  transform: rotate(45deg);
+}
+
+.phone__body { padding: 11px; display: grid; gap: 8px; }
+
+.phone__field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 27px;
+  padding: 0 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  color: var(--ph-mut);
+}
+
+.phone__field svg {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--ph-mut);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.phone__field--search { background: #f0f1f4; }
+.phone__field--input { border: 1px solid var(--ph-line); }
+
+.phone__cta {
+  min-height: 29px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  background: var(--ph-blue);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+/* ---------- ilustração do passo 3 ---------- */
+
+.guide__art { display: grid; place-items: center; padding: 2px 0 4px; }
+
+.guide__art svg { width: 128px; height: auto; fill: var(--text); stroke: none; }
+
+.guide__art-rays {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.guide__art-ban {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 7;
+  stroke-linecap: round;
+}
 
 .sheet__note {
   margin: 0 0 16px;
